@@ -1,0 +1,35 @@
+
+environmentName: 'nonprod'
+server:
+  Port: 8080
+  ReadTimeout: 5
+  WriteTimeout: 15
+  IdleTimeout: 20
+
+db:
+  driver: postgres
+  host: localhost
+  port: "5432"
+  user: myuser
+  password: mypassword
+  database: mydatabase
+  options: sslmode=disable
+  maxIdle: 10
+  maxOpen: 100
+
+secretKey: authservice
+issuer: authservice
+interval: 60
+
+logger:
+  base: logrus
+  level: info
+  format: text
+  reportCaller: true
+  enabled: true
+  maxSize: 100
+  maxAge: 30
+  maxBackups: 5
+  localTime: true
+  compress: true
+  logDir: logs             # folder for logs

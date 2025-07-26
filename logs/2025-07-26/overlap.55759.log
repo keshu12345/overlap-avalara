@@ -1,0 +1,2 @@
+time="2025-07-26T18:21:56+05:30" level=info msg="Checking time range  with overlapservice" func="github.com/keshu12345/overlap-avalara/logger.(*logrusLogger).Info" file="/Users/keshav/overlap-avalara/logger/logger.go:67"
+time="2025-07-26T18:21:56+05:30" level=info msg="isOverlap the time range true" func="github.com/keshu12345/overlap-avalara/logger.(*logrusLogger).Infof" file="/Users/keshav/overlap-avalara/logger/logger.go:68"

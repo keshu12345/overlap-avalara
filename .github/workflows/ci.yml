@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.24.2
+
+      - name: Install dependencies
+        run: go mod tidy
+
+      - name: Run tests
+        run: make test
+
+      - name: Build artifact
+        run: make build
+
+      - name: List bin contents
+        run: ls -lh bin || echo "❌ bin/ not found"
+
+      - name: Upload binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: overlap-avalara
+          path: bin/overlap-avalara
+
+      - name: 🧹 Clean bin folder (explicit rm fallback)
+        run: |
+          echo "Cleaning bin manually..."
+          rm -rf bin
+          echo "bin cleaned"
