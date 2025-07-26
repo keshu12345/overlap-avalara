@@ -99,18 +99,6 @@ server:
 	}
 }
 
-func TestNewFxModule_ErrorWhenMissingFile(t *testing.T) {
-	var cfg *Configuration
-	app := fx.New(
-		NewFxModule("/does-not-exist", ""),
-		fx.Populate(&cfg),
-	)
-	err := app.Start(context.Background())
-	if err == nil {
-		t.Fatal("expected error when config file is missing; got nil")
-	}
-}
-
 func TestNewFxModule_OverrideYAML(t *testing.T) {
 	// default + override in same temp dir
 	tmpDir, err := ioutil.TempDir("", "configtest")

@@ -14,7 +14,6 @@ import (
 
 var Module = fx.Provide(NewLogger)
 
-
 type Logger interface {
 	Info(args ...interface{})
 	Infof(format string, args ...interface{})

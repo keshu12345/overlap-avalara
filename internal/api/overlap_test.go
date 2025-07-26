@@ -472,7 +472,7 @@ func TestCheckOverlap_InvalidJSON(t *testing.T) {
 		},
 		{
 			name:        "Missing Required Fields",
-			requestBody: `{"range1": {"start": "2025-07-01T10:00:00Z"}}`, 
+			requestBody: `{"range1": {"start": "2025-07-01T10:00:00Z"}}`,
 			description: "Missing required fields should return BadRequest",
 		},
 		{
@@ -495,7 +495,6 @@ func TestCheckOverlap_InvalidJSON(t *testing.T) {
 			mockService := &MockOverlapService{}
 			mockLogger := &MockLogger{}
 
-		
 			RegisterEndpoint(router, mockService, mockLogger)
 
 			mockLogger.On("Errorf", "Unable to bind with json body :%v", mock.Anything).Return()
@@ -513,8 +512,6 @@ func TestCheckOverlap_InvalidJSON(t *testing.T) {
 		})
 	}
 }
-
-
 
 func TestCheckOverlap_MissingFields(t *testing.T) {
 	testCases := []struct {

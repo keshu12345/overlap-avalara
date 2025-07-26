@@ -8,7 +8,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/keshu12345/overlap-avalara/constants"
 	"github.com/keshu12345/overlap-avalara/pkg/customerror"
-	
 
 	//	errpkg "github.com/keshu12345/overlap-avalara/pkg/error"
 	httpPkg "github.com/keshu12345/overlap-avalara/pkg/http"
@@ -76,8 +75,3 @@ func TestNewErrorResponse_RequestNotValid(t *testing.T) {
 	assert.Nil(t, body.Error.Data)
 	assert.Nil(t, body.Error.Errors)
 }
-
-
-
-
-

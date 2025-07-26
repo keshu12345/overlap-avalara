@@ -79,22 +79,22 @@ func TestSetCustomErrorMapping(t *testing.T) {
 
 func TestNewErrorResponse_WithValidMapping(t *testing.T) {
 	ctx, w := setupGinContext()
-	
+
 	// First, let's test without errors to see the baseline
 	customErr := error2.NewCustomErrorWithPayload(
 		constants.RequestInvalid,
 		"Invalid request data",
 		map[string]interface{}{"field": "value"},
 	)
-	
+
 	mapping := map[constants.Code]httpPkg.StatusCode{
 		constants.RequestInvalid: httpPkg.StatusBadRequest,
 	}
-	
+
 	NewErrorResponse(ctx, customErr, mapping)
-	
+
 	assert.Equal(t, httpPkg.StatusBadRequest.Code(), w.Code)
-	
+
 	resp := parseErrorResponse(t, w.Body.Bytes())
 	assert.False(t, resp.IsSuccess)
 	assert.Equal(t, httpPkg.StatusBadRequest.Code(), resp.StatusCode)
@@ -214,7 +214,6 @@ func TestNewErrorResponseWithMessage(t *testing.T) {
 	assert.Equal(t, httpPkg.StatusBadRequest.Code(), resp.StatusCode)
 }
 
-
 func TestGenerateErrorResponse_NonRequestInvalidError(t *testing.T) {
 	ctx, w := setupGinContext()
 
@@ -250,7 +249,6 @@ func TestGenerateErrorResponse_WithMultipleOptions(t *testing.T) {
 	assert.Equal(t, "Option 2 data", resp.Error.Data)
 	assert.Equal(t, map[string]string{"custom": "error"}, resp.Error.Errors)
 }
-
 
 func TestNewErrorResponse_ContextAbortion(t *testing.T) {
 	ctx, w := setupGinContext()

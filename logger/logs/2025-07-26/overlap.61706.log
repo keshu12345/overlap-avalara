@@ -1,6 +1,0 @@
-time="2025-07-26T18:31:25+05:30" level=info msg=test func="github.com/keshu12345/overlap-avalara/logger.(*logrusLogger).Info" file="/Users/keshav/overlap-avalara/logger/logger.go:67"
-time="2025-07-26T18:31:25+05:30" level=info msg="test formatted" func="github.com/keshu12345/overlap-avalara/logger.(*logrusLogger).Infof" file="/Users/keshav/overlap-avalara/logger/logger.go:68"
-time="2025-07-26T18:31:25+05:30" level=error msg=test func="github.com/keshu12345/overlap-avalara/logger.(*logrusLogger).Error" file="/Users/keshav/overlap-avalara/logger/logger.go:70"
-time="2025-07-26T18:31:25+05:30" level=error msg="test formatted" func="github.com/keshu12345/overlap-avalara/logger.(*logrusLogger).Errorf" file="/Users/keshav/overlap-avalara/logger/logger.go:71"
-time="2025-07-26T18:31:25+05:30" level=warning msg=test func="github.com/keshu12345/overlap-avalara/logger.(*logrusLogger).Warn" file="/Users/keshav/overlap-avalara/logger/logger.go:73"
-time="2025-07-26T18:31:25+05:30" level=warning msg="test formatted" func="github.com/keshu12345/overlap-avalara/logger.(*logrusLogger).Warnf" file="/Users/keshav/overlap-avalara/logger/logger.go:74"

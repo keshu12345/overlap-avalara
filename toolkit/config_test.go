@@ -224,7 +224,6 @@ func TestNewConfig_FileNotFound(t *testing.T) {
 	assert.Contains(t, err.Error(), "Not Found")
 }
 
-
 func TestNewConfig_InvalidYAMLFormat(t *testing.T) {
 	invalidContent := `
 server:
@@ -384,9 +383,8 @@ debug: true
 	err := os.WriteFile(configPath, []byte(configContent), 0644)
 	require.NoError(t, err)
 
-
 	envVars := map[string]string{
-		"server.port": "", 
+		"server.port": "",
 	}
 
 	var config TestConfig

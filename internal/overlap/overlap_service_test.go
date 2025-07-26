@@ -53,7 +53,6 @@ func mustParseTime(timeStr string) time.Time {
 	return t
 }
 
-
 func createDateRange(start, end string) data.DateRange {
 	return data.DateRange{
 		Start: mustParseTime(start),
