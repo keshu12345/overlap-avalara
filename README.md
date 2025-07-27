@@ -65,7 +65,7 @@ overlap-avalara/
 └── toolkit/                   # Utility functions
 ```
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### Clone the Repository
 ```bash
@@ -83,7 +83,7 @@ go mod tidy
 make build
 ```
 
-## 🚀 Running the Application
+##  Running the Application
 
 ### Method 1: Using Make (Recommended)
 ```bash
@@ -130,7 +130,7 @@ docker-compose down
 
 The application will start on `http://localhost:8081` by default (configurable via environment-specific YAML files).
 
-## 🐳 Docker Configuration
+## Docker Configuration
 
 ### Dockerfile
 The application includes a multi-stage Dockerfile for optimized builds:
@@ -215,7 +215,7 @@ Checks if two time ranges overlap.
 }
 ```
 
-## 🧪 API Testing Examples
+## API Testing Examples
 
 ### 1. Overlapping Ranges (Expected: `overlap: true`)
 ```bash
@@ -265,7 +265,7 @@ curl -s -X POST http://localhost:8081/api/v1/overlap-check \
   }' | jq
 ```
 
-## 🔧 Development Commands
+## Development Commands
 
 ### Available Make Targets
 ```bash
@@ -335,7 +335,7 @@ go test ./... -v -cover
 make fmt
 ```
 
-## 🚀 CI/CD Pipeline
+## CI/CD Pipeline
 
 ### GitHub Actions Workflow
 
@@ -523,16 +523,12 @@ pipeline {
         stage('Test') {
           steps {
             echo "→ Running Go unit tests with coverage"
-            // Verify Go is available
             sh 'go version'
-            // Download modules
             sh 'go mod download'
-            // Run all tests, output verbose logs and record coverage
             sh 'go test -v -coverprofile=coverage.out ./...'
           }
           post {
             always {
-              // Archive the coverage report so you can download it from the build
               archiveArtifacts artifacts: 'coverage.out', fingerprint: true
             }
           }
