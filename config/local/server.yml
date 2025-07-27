@@ -17,10 +17,6 @@ db:
   maxIdle: 10
   maxOpen: 100
 
-secretKey: authservice
-issuer: authservice
-interval: 60
-
 logger:
   base: logrus
   level: info
