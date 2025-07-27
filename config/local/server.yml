@@ -1,7 +1,7 @@
 
 environmentName: 'local'
 server:
-  Port: 8080
+  Port: 8081
   ReadTimeout: 5
   WriteTimeout: 15
   IdleTimeout: 20
