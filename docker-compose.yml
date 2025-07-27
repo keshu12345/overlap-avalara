@@ -2,10 +2,8 @@ version: '3.9'
 
 services:
   overlap-avalara:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: overlap-avalara:latest
+ 
+    image: 210423/overlap-avalara:latest
     container_name: overlap-avalara
     ports:
       - '8081:8081'
