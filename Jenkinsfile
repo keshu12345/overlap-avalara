@@ -105,7 +105,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo "→ Deploying container"
-        sh 'docker compose up -d --remove-orphans'
+        sh 'docker compose down && docker compose up -d --remove-orphans'
         echo "docker compose running and up in port :8081"
       }
     }
