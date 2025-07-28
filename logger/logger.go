@@ -40,7 +40,6 @@ func NewLogger() Logger {
 
 	log.SetReportCaller(true)
 
-	// Create log directory with date folder and PID file
 	pid := os.Getpid()
 	date := time.Now().Format("2006-01-02")
 	logDir := filepath.Join("logs", date)
