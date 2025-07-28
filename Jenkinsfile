@@ -105,7 +105,15 @@ pipeline {
     stage('Deploy') {
       steps {
         echo "→ Deploying container"
-        sh 'docker compose down && docker compose up -d --remove-orphans'
+        script {
+              // Stop and remove any existing containers with the same name
+              sh '''
+                docker stop overlap-avalara || true
+                docker rm overlap-avalara || true
+                docker compose down
+                docker compose up -d --remove-orphans
+              '''
+            }
         echo "docker compose running and up in port :8081"
       }
     }
